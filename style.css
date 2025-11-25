@@ -1,0 +1,61 @@
+.chatbotlyon3-bubble {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-image: url('');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #4e2a84;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.chatbotlyon3-container {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+.chatbotlyon3-container.active {
+    display: block;
+}
+
+.chatbotlyon3-content {
+    margin-top: 20px;
+}
+
+.chatbotlyon3-header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.chatbotlyon3-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+.chatbotlyon3-container.minimized {
+    height: 40px;
+    overflow: hidden;
+}
+
+
+.chatbotlyon3-container.maximized {
+    width: 100%;
+    height: 100%;
+}
