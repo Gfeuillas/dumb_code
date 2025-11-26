@@ -3,24 +3,32 @@ define('block_chatbotlyon3/chatbotlyon3', ['jquery'], function ($) {
         init: function () {
             console.log('Max - Chatbot Lyon 3 initialized');
 
-            //$('#chatbotlyon3-bubble').on('click', function(){$('#chatbotlyon3-container').toggleClass('active');});
+            const container = $('#chatbotlyon3-container');
+            const apikey = container.data('apikey');
+            if (apikey) {
+                console.debug('Chatbot Lyon 3 API key configured.');
+            }
 
             // Afficher/masquer la fenêtre du chatbot lorsque la bulle est cliquée
             $('#chatbotlyon3-bubble').on('click', function () {
-                $('#chatbotlyon3-container').toggleClass('active');
-                $('#chatbotlyon3-container').css('display', 'block');
+                container.toggleClass('active');
+                container.css('display', container.hasClass('active') ? 'block' : 'none');
             });
 
-            $('#chatbotlyon3-container').toggleClass('minimized');
+            // Minimiser la fenêtre du chatbot
+            $('#chatbotlyon3-minimize').on('click', function () {
+                container.toggleClass('minimized');
+            });
 
             // Maximiser la fenêtre du chatbot
             $('#chatbotlyon3-maximize').on('click', function () {
-                $('#chatbotlyon3-container').toggleClass('maximized');
+                container.toggleClass('maximized');
             });
 
             // Fermer la fenêtre du chatbot
             $('#chatbotlyon3-close').on('click', function () {
-                $('#chatbotlyon3-container').css('display', 'none');
+                container.removeClass('active maximized minimized');
+                container.css('display', 'none');
             });
         }
     };
