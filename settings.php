@@ -7,6 +7,6 @@ if ($ADMIN->fulltree) {
         get_string('apikey', 'block_chatbotlyon3'),
         get_string('apikey_desc', 'block_chatbotlyon3'),
         '',
-        PARAM_TEXT
+        PARAM_ALPHANUMEXT
     ));
 }
